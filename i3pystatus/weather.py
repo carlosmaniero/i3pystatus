@@ -1,3 +1,4 @@
+from __future__ import unicode_literals
 from i3pystatus import IntervalModule
 import pywapi
 from i3pystatus.core.util import internet, require
@@ -31,12 +32,12 @@ class Weather(IntervalModule):
     format = "{current_temp}"
     colorize = False
     color_icons = {
-        "Fair": (u"\u2600", "#FFCC00"),
-        "Cloudy": (u"\u2601", "#F8F8FF"),
-        "Partly Cloudy": (u"\u2601", "#F8F8FF"),  # \u26c5 is not in many fonts
-        "Rainy": (u"\u2614", "#CBD2C0"),
-        "Sunny": (u"\u263C", "#FFFF00"),
-        "Snow": (u"\u2603", "#FFFFFF"),
+        "Fair": ("\u2600", "#FFCC00"),
+        "Cloudy": ("\u2601", "#F8F8FF"),
+        "Partly Cloudy": ("\u2601", "#F8F8FF"),  # \u26c5 is not in many fonts
+        "Rainy": ("\u2614", "#CBD2C0"),
+        "Sunny": ("\u263C", "#FFFF00"),
+        "Snow": ("\u2603", "#FFFFFF"),
         "default": ("", None),
     }
 

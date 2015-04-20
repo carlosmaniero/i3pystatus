@@ -66,7 +66,7 @@ class Status:
         try:
             return self.modules.append(module, *args, **kwargs)
         except ImportError as import_error:
-            if import_error.name and not import_error.path and isinstance(module, str):
+            if hasattr(import_error, 'name') and import_error.name and not import_error.path and isinstance(module, str):
                 # This is a package/module not found exception raised by importing a module on-the-fly
                 return self.modules.append(Text(
                     color="#FF0000",

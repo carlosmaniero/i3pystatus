@@ -6,6 +6,7 @@ from .pulse import *
 
 from i3pystatus import Module
 import subprocess
+from which import which
 
 
 class PulseAudio(Module, ColorRangeModule):
@@ -80,7 +81,7 @@ class PulseAudio(Module, ColorRangeModule):
         self.colors = self.get_hex_color_range(self.color_muted, self.color_unmuted, 100)
 
         # Check that we have amixer for toggling mute/unmute and incrementing/decrementing volume
-        self.has_amixer = shutil.which('alsamixer') is not None
+        self.has_amixer = which('alsamixer') is not None
 
     def request_update(self, context):
         """Requests a sink info update (sink_info_cb is called)"""

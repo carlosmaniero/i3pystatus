@@ -1,3 +1,4 @@
+from __future__ import unicode_literals
 import collections
 import functools
 import re
@@ -379,7 +380,7 @@ def make_graph(values, upper_limit=100.0):
     # as high values drop off the end.
     values.append(float(upper_limit))
 
-    bar = u'_▁▂▃▄▅▆▇█'
+    bar = '_▁▂▃▄▅▆▇█'
     bar_count = len(bar) - 1
     mn, mx = min(values), max(values)
     extent = mx - mn
@@ -399,7 +400,7 @@ def make_vertical_bar(percentage, width=1):
     :param width: How many characters wide the bar should be.
     :returns: Bar as a String
     """
-    bar = u' _▁▂▃▄▅▆▇█'
+    bar = ' _▁▂▃▄▅▆▇█'
     percentage //= 10
     if percentage < 0:
         output = bar[0]

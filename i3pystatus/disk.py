@@ -51,6 +51,8 @@ class Disk(IntervalModule):
 
         self.output = {
             "full_text": self.format.format(**cdict),
-            "color": self.color if available > self.critical_limit else self.critical_color,
-            "urgent": available > self.critical_limit
         }
+
+        if available < self.critical_limit:
+            #self.output['full_text'] = 'Eita porra'
+            self.output['color'] = self.critical_color
